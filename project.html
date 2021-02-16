@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+</head>
+<body>
+	<p><h2>Reaction test<h2></p>
+		<h3 id="h">Your Time</h3>
+		<p id="p"><h3 id="h3"></h3></p>
+	<p class="score">Scoreboard</p>
+	<table id="table1" class="score" style="top:5%">
+ 	<tr  id="tr"><td>...</td></tr>
+ 	<tr><td  id="tr1">...</td></tr>
+ 	<tr><td id="tr2">...</td></tr>
+ 	<tr><td id="tr3">...</td></tr>
+ 	<tr><td id="tr4">...</td></tr>
+ 	<tr><td id="tr5">...</td></tr>
+ 	<tr><td id="tr6">...</td></tr>
+ 	<tr><td id="tr7">...</td></tr>
+ 	<tr><td id="tr8">...</td></tr>
+	</table>
+	<div id="div"></div>
+	<script type="text/javascript">
+		function getRandomColor() {
+  			var letters = '0123456789ABCDEF';
+  			var color = '#';
+  			for (var i = 0; i < 6; i++) {
+    		color += letters[Math.floor(Math.random() * 16)];
+ 	 		}
+  			return color;
+			}
+		var	start=new Date().getTime();
+		function appear(){
+			start=new Date().getTime();
+			document.getElementById("div").style.display="block"
+			var width=(Math.random()*700)+50;
+			var top=Math.random()*500;
+			var left=Math.random()*700;
+			if(Math.random()<0.3){
+				document.getElementById("div").style.borderRadius=0+"%";
+			}
+			else{
+				document.getElementById('div').style.borderRadius=51+"%";
+			} 
+			document.getElementById("div").style.height=width+"px";
+			document.getElementById("div").style.width=width+"px";
+			document.getElementById("div").style.top=top+"px";
+			document.getElementById("div").style.left=left+"px";
+			document.getElementById("div").style.background=getRandomColor();
+		}
+		
+		// Все элементы случайности находятся в первой функции из-за того что она появляет квадрат
+		function infinitedivappear(){
+			setTimeout(appear,Math.random()*1000)
+		};
+		infinitedivappear();
+		// Функция инфинит...сдесь нужна для того что-бы див(квадрат,круг) вообще появился
+		document.getElementById("div").onclick=function(){
+			var end=new Date().getTime();
+			var result=end-start;
+			document.getElementById("h3").innerHTML=result/1000+"sec";
+			var massResult=[new result];
+			console.log(result);
+
+			document.getElementById("div").style.display="none";
+			infinitedivappear();
+
+		}
+		
+		// Что же принцип работы таймера вроде понятен,сетТаймОут работает в основном с функциями  ,по поводу старт нью ... отсчет начинается ,но потом обнуляется и начинается заново во время вызова функции аппиар
+ 	</script>
+	<style>
+		#div{
+			position:relative;
+			width:200px;
+			height:200px;
+			background: red;
+			margin-top:2%;
+			display: none;
+		}
+		.score{
+			position:absolute;
+			left:80%;
+			top:0%;
+			font-weight:bold;
+			font-size: 24px;
+		}
+	</style>
+</body>
+</html>

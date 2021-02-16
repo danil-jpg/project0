@@ -1,0 +1,36 @@
+/*Спустя час или около того я смог подключить ссс*/
+body{
+	margin:0;
+}
+header{
+	
+	background: #8910F9 ;
+	width: 100% ;
+	height: 20% ;
+}
+
+.ty{
+	background: #FF00D8 ;
+	height: 100%;
+	width:20%;
+
+}
+#try{
+	background: #FF00D8 ;
+	height: 100%;
+	width:20%;
+	margin-left:80%;
+	position:absolute;
+	top:20%;
+}
+#center{
+	position: absolute;
+	top:20%;
+	margin-left: 47%;
+}
+.fir{
+					width:10%;
+					height:10%;
+					background:#FFFFFF;
+					
+				}
