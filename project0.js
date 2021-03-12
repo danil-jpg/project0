@@ -1,5 +1,6 @@
 "use strict"
 
+// 12.03
 
 var money = '';
 
